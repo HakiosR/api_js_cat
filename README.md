@@ -145,7 +145,7 @@ Contenu du JSON :
 ]
 ```
 
-Données importantes qui pourrant $etre réutilisées :
+Données importantes qui pourrant etre réutilisées :
 - breeds
 - id
 - url
