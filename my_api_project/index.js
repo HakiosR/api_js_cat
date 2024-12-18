@@ -13,7 +13,11 @@ app.get("/external-data", async (req, res) => {
 
 app.get("/get-breeds", async (req, res) => {
     try {
-        const response = await axios.get("https://api.thecatapi.com/v1/breeds")
+        const response = await axios.get("https://api.thecatapi.com/v1/breeds", {
+            headers: {
+                'x-api-key': 'YOUR_API_KEY'  // Remplacez par ta clé API
+            }
+        })
         res.json(response.data);
     } catch (e) {
         res.status(500).send(e.message);
