@@ -1,5 +1,7 @@
 * * *
 
+# Groupe : Louis BLANLEUIL, Bastien DE VIENNE, WALLIN Mathieu
+
 # Étapes du TP
 
 ## 1. Choix et exploration d'une API publique
