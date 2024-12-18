@@ -1,34 +1,40 @@
-# This config was automatically generated from your source code
-# Stacks detected: deps:node:my_api_project,package_manager:yarn:
 version: 2.1
+
 orbs:
-  node: circleci/node@5
+  node: circleci/node@5 
+
 jobs:
   test-node:
-    # Install node dependencies and run tests
     executor: node/default
-    working_directory: ~/project/my_api_project
+    working_directory: ~/project/my_api_project 
     steps:
-      - checkout:
-          path: ~/project
+      - checkout
       - node/install-packages:
-          pkg-manager: yarn
+          pkg-manager: yarn 
       - run:
           name: Run tests
-          command: echo \"No test specified in package.json\"
+          command: echo "No test specified in package.json" 
+
   deploy:
-    # This is an example deploy job, not actually used by the workflow
     docker:
-      - image: cimg/base:stable
+      - image: cimg/base:stable 
     steps:
-      # Replace this with steps to deploy to users
+      - checkout  
       - run:
-          name: deploy
-          command: '#e.g. ./deploy.sh'
+          name: Install dependencies
+          command: yarn install  
+      - run:
+          name: Start API locally
+          command: |
+            nohup node index.js &  # Lance ton serveur en arrière-plan avec nohup
+            sleep 10  # Laisse quelques secondes au serveur pour démarrer
+            curl http://localhost:3000/external-data  # Vérifie que ton serveur fonctionne en envoyant une requête à ton API
+
 workflows:
+  version: 2
   build-and-test:
     jobs:
-      - test-node
-    # - deploy:
-    #     requires:
-    #       - test-node
+      - test-node 
+      - deploy:  
+          requires:
+            - test-node  
