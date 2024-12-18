@@ -31,42 +31,42 @@ Description : Permet d'obtenir les détails d'une image de chat spécifique.
 Paramètres :
 - image_id: L'ID de l'image pour récupérer ses détails.
 
-3. **/v1/breeds****
+3. **/v1/breeds**
 
 Description : Récupère une liste de toutes les races de chats.
 Paramètres : Aucun.
 
-4. **/v1/categories******
+4. **/v1/categories**
 
 Description : Récupère une liste de toutes les catégories d'images (ex: "funny", "cute").
 Paramètres : Aucun.
 
-5. /v1/votes******
+5. **/v1/votes**
 
 Description : Permet de voter pour une image (avec une clé API validée). 
 Paramètres :
 - image_id: ID de l'image.
 - value: Le vote (1 pour aimer, -1 pour ne pas aimer).
 
-6. /v1/favourites******
+6. **/v1/favourites**
 
 Description : Permet d'ajouter ou de récupérer les images favorites.
 Paramètres :
 - image_id: ID de l'image à ajouter.
 
-7. /v1/images/upload******
+7. **/v1/images/upload**
 
 Description : Permet de télécharger une image depuis un fichier local pour l'ajouter à la plateforme.
 Paramètres :
 - file: Fichier image à télécharger
 
-8. /v1/votes/{vote_id}******
+8. **/v1/votes/{vote_id}**
 
 Description : Permet de supprimer un vote pour une image donnée.
 Paramètres :
 - vote_id: L'ID du vote à supprimer.
 
-9. /v1/images/search?breed_ids={breed_id}******
+9. **/v1/images/search?breed_ids={breed_id}**
 
 Description : Permet de rechercher des images d'une race spécifique de chat.
 Paramètres :
